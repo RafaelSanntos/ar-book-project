@@ -1,36 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realidade Aumentada - A Arte da Guerra</title>
-
-  <!-- A-Frame para criar a cena 3D -->
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <!-- AR.js para a integração com AR -->
-  <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="margin: 0; overflow: hidden;">
-  <!-- Cena 3D para AR -->
-  <a-scene embedded arjs>
-    <!-- Usando o marcador personalizado -->
-    <a-marker type="pattern" url="pattern-ArteDaGuerra.patt">
-      <!-- Exibindo uma imagem do Sun Tzu -->
-      <a-image src="SunTzu.avif" position="0 1 0" scale="2 2 2"></a-image>
+<body>
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
+        <a-marker preset="hiro">
+            <a-box color="red"></a-box>
+        </a-marker>
 
-      <!-- Texto explicativo sobre Sun Tzu -->
-      <a-text value="Sun Tzu foi um general, estrategista e filósofo chinês, autor de A Arte da Guerra." 
-              position="0 2 0" scale="4 4 4" color="#FFF" align="center"></a-text>
-
-      <!-- Exibindo uma imagem do local histórico, como um campo de batalha -->
-      <a-image src="sua_imagem_do_local.jpg" position="0 3 0" scale="2 2 2"></a-image>
-
-      <!-- Texto explicativo sobre a batalha -->
-      <a-text value="Batalha de Guandu - 200 A.C." position="0 4 0" scale="3 3 3" color="#FFF"></a-text>
-    </a-marker>
-
-    <!-- Câmera -->
-    <a-entity camera></a-entity>
-  </a-scene>
+        <a-entity camera></a-entity>
+    </a-scene>
 </body>
 </html>
